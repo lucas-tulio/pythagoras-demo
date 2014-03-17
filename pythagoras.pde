@@ -8,6 +8,7 @@ int strokeColor = 0;
 int angleSize = 20;
 int xAngleOffset = 0;
 int yAngleOffset = 0;
+int dotOffset = 0;
 
 // Text drawing guides
 int lineSize = 24;
@@ -38,6 +39,7 @@ void draw() {
   
   // White background, border
   background(255);
+  stroke(0, 0, 0);
   rect(0, 0, width-1, height-1);
   
   // Calculate the Hypotenuse and the sum of both circles' radius
@@ -90,10 +92,12 @@ void draw() {
     yInversion = 1;
     hypotenuseYTextOffset = -20;
     yAngleOffset = -angleSize;
+    dotOffset = 1;
   } else {
     yInversion = -1;
     hypotenuseYTextOffset = +20;
     yAngleOffset = 0;
+    dotOffset = 0;
   }
   
   // Draw the adjacent, opposite and hypotenuse lines
@@ -107,6 +111,14 @@ void drawLines() {
   
   strokeWeight(1);
   
+  // Draw the Square Angle indicator
+  stroke(0, 0, 0);
+  int rectX = c2x + xAngleOffset;
+  int rectY = c1y + yAngleOffset;
+  rect(rectX, rectY, angleSize, angleSize);
+  fill(0, 0, 0);
+  ellipse(dotOffset + (rectX*2.0 + angleSize) / 2.0, dotOffset + (rectY*2.0 + angleSize) / 2.0, 1, 1);
+
   // Adjacent side
   stroke(255, 0, 0);
   line(c1x, c1y, c2x, c1y);
@@ -116,20 +128,12 @@ void drawLines() {
   // Hypotenuse
   stroke(200, 0, 200);
   line(c1x, c1y, c2x, c2y);
-  
-  // Draw the Square Angle indicator
-  stroke(0, 0, 0);
-  int rectX = c2x + xAngleOffset;
-  int rectY = c1y + yAngleOffset;
-  rect(rectX, rectY, angleSize, angleSize);
-  fill(0, 0, 0);
-  ellipse((rectX*2 + angleSize) / 2, (rectY*2 + angleSize) / 2, 1, 1);
-  
+
   noFill();
 }
 
 /**
-* Pythagora's Magic below
+* Pythagoras Magic below
 **/
 double getHypotenuse(adjacent, opposite) {
   return Math.sqrt((double)(Math.pow(adjacent, 2) + Math.pow(opposite, 2)));
