@@ -157,27 +157,25 @@ int getSide(int x1, int x2) {
 void printValues(int adjacent, int opposite, double hypotenuse) {
   
   fill(0);
-  
-  text("Click and drag to move the smaller circle", 10, 1*lineSize);
 
-  text("Circle 1", 10, 3*lineSize);
-  text("x = " + c1x, 10, 4*lineSize);
-  text("y = " + c1y, 10, 5*lineSize);
-  text("radius = " + c1r, 10, 6*lineSize);
+  text("Circle 1", 10, 1*lineSize);
+  text("x = " + c1x, 10, 2*lineSize);
+  text("y = " + c1y, 10, 3*lineSize);
+  text("radius = " + c1r, 10, 4*lineSize);
   
-  text("Circle 2", 120, 3*lineSize);
-  text("x = " + c2x, 120, 4*lineSize);
-  text("y = " + c2y, 120, 5*lineSize);
-  text("radius = " + c2r, 120, 6*lineSize);
+  text("Circle 2", 120, 1*lineSize);
+  text("x = " + c2x, 120, 2*lineSize);
+  text("y = " + c2y, 120, 3*lineSize);
+  text("radius = " + c2r, 120, 4*lineSize);
   
   fill(255, 0, 0);
-  text("adjacent side", 10, 8*lineSize);
+  text("adjacent side", 10, 6*lineSize);
   text(adjacent, (c1x + c2x) / 2 + xTextOffset, c1y + 20*yInversion);
   fill(0, 0, 255);
-  text("opposite side", 10, 9*lineSize);
+  text("opposite side", 10, 7*lineSize);
   text(opposite, c2x + 10*xInversion + xTextOffset, (c2y + c1y) / 2);
   fill(140, 0, 140);
-  text("hypotenuse", 10, 10*lineSize);
+  text("hypotenuse", 10, 8*lineSize);
   text("" + nf((float)hypotenuse, 0, 2), ((c1x + c2x) / 2) + hypotenuseXTextOffset, ((c1y + c2y) / 2) + hypotenuseYTextOffset);
   
   fill(0, 0, 0);
