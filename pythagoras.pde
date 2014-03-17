@@ -42,6 +42,10 @@ void draw() {
   stroke(0, 0, 0);
   rect(0, 0, width-1, height-1);
   
+  // Movement
+  c1x = mouseX;
+  c1y = mouseY;
+
   // Calculate the Hypotenuse and the sum of both circles' radius
   int adjacent = getSide(c1x, c2x);
   int opposite = getSide(c1y, c2y);
@@ -181,12 +185,4 @@ void printValues(int adjacent, int opposite, double hypotenuse) {
   text("Lucas Tulio, 2014", width - 150, (int)height - 10);
   
   noFill();
-}
-
-void mousePressed() {
-  this.mouseDragged();
-}
-void mouseDragged() {
-  c1x = mouseX;
-  c1y = mouseY;
 }
