@@ -161,20 +161,23 @@ void printValues(int adjacent, int opposite, double hypotenuse) {
   text("Circle 1", 10, 1*lineSize);
   text("x = " + c1x, 10, 2*lineSize);
   text("y = " + c1y, 10, 3*lineSize);
+  fill(strokeColor, 0, strokeColor);
   text("radius = " + c1r, 10, 4*lineSize);
-  
+  fill(0, 0, 0);
   text("Circle 2", 120, 1*lineSize);
   text("x = " + c2x, 120, 2*lineSize);
   text("y = " + c2y, 120, 3*lineSize);
+  fill(strokeColor, 0, strokeColor);
   text("radius = " + c2r, 120, 4*lineSize);
-  
+  fill(0, 0, 0);
+
   fill(255, 0, 0);
   text("adjacent side", 10, 6*lineSize);
   text(adjacent, (c1x + c2x) / 2 + xTextOffset, c1y + 20*yInversion);
   fill(0, 0, 255);
   text("opposite side", 10, 7*lineSize);
   text(opposite, c2x + 10*xInversion + xTextOffset, (c2y + c1y) / 2);
-  fill(140, 0, 140);
+  fill(200, 0, 200);
   text("hypotenuse", 10, 8*lineSize);
   text("" + nf((float)hypotenuse, 0, 2), ((c1x + c2x) / 2) + hypotenuseXTextOffset, ((c1y + c2y) / 2) + hypotenuseYTextOffset);
   
