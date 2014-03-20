@@ -24,7 +24,7 @@ int height = 500;
 
 void setup() {
 
-  size((int)width, (int)height);
+  size(width, height);
   textSize(18);
   
   c1x = 100;
