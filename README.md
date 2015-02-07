@@ -1,5 +1,5 @@
-Pythagoras in Processing.js
-===========================
+Pythagoras Demo
+===============
 
 Interactive demo of the Pythagorean Theorem in Processing.js
 
